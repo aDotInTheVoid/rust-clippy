@@ -189,6 +189,7 @@ mod default_numeric_fallback;
 mod dereference;
 mod derivable_impls;
 mod derive;
+mod disallowed_macro;
 mod disallowed_method;
 mod disallowed_script_idents;
 mod disallowed_type;

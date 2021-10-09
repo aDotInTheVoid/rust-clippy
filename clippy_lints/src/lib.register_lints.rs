@@ -93,6 +93,7 @@ store.register_lints(&[
     derive::DERIVE_ORD_XOR_PARTIAL_ORD,
     derive::EXPL_IMPL_CLONE_ON_COPY,
     derive::UNSAFE_DERIVE_DESERIALIZE,
+    disallowed_macro::DISALLOWED_MACRO,
     disallowed_method::DISALLOWED_METHOD,
     disallowed_script_idents::DISALLOWED_SCRIPT_IDENTS,
     disallowed_type::DISALLOWED_TYPE,
