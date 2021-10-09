@@ -23,6 +23,14 @@ pub enum DisallowedMethod {
     WithReason { path: String, reason: Option<String> },
 }
 
+/// A single disallowed method, used by the `DISALLOWED_MACRO` lint.
+#[derive(Clone, Debug, Deserialize)]
+#[serde(untagged)]
+pub enum DisallowedMacro {
+    Simple(String),
+    WithReason { path: String, reason: Option<String> },
+}
+
 /// Conf with parse errors
 #[derive(Default)]
 pub struct TryConf {
@@ -248,6 +256,10 @@ define_Conf! {
     ///
     /// Whether to allow certain wildcard imports (prelude, super in tests).
     (warn_on_all_wildcard_imports: bool = false),
+    /// Lint: DISALLOWED_MACRO.
+    ///
+    /// The list of disallowed macros, written as fully qualified paths.
+    (disallowed_macros: Vec<crate::utils::conf::DisallowedMacro> = Vec::new()),
     /// Lint: DISALLOWED_METHOD.
     ///
     /// The list of disallowed methods, written as fully qualified paths.
